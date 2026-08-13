@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock_Paper_Scissors</title>
+</head>
+<body>  
+<p>Rock Paper Scissors</p>
+<button onclick="
+  let  Computerplay = Math.floor(Math.random()*3);
+  ++numberofgames
+  if(Computerplay === 0)
+  {
+    ++draw;
+    alert(`You played Rock,Computer chose Rock. It was a draw.` +` Player score: ${playerscore} , Computer Score: ${computerscore} , Draw : ${draw} ,Number of games: ${numberofgames} `);
+  }if(Computerplay === 1)
+  {
+    ++computerscore;
+    alert(`You played Rock,Computer chose   Paper. Computer wins.` +` Player score: ${playerscore} , Computer Score: ${computerscore} , Draw : ${draw} ,Number of games: ${numberofgames} `);
+  }if(Computerplay === 2)
+  {
+    ++playerscore;
+    alert(`You played Rock,Computer chose Scissors. You win.` +` Player score: ${playerscore} , Computer Score: ${computerscore} , Draw : ${draw} ,Number of games: ${numberofgames} `);
+  }
+
+  "
+  > Rock</button>
+  <button onclick="
+    Computerplay = Math.floor(Math.random()*3);
+    ++numberofgames;
+    if(Computerplay === 0)
+    {
+      ++playerscore ;
+      alert(`You played paper,Computer chose Rock. You win.`
+       +` Player score: ${playerscore} ,
+        Computer Score: ${computerscore} ,
+         Draw: ${draw} ,
+         Number of games: ${numberofgames} `);
+    }
+    if(Computerplay === 1)
+    {
+      ++draw;
+      alert(`You played paper,Computer chose   Paper.It is a draw.` 
+      +` Player score: ${playerscore} ,
+       Computer Score: ${computerscore} ,
+        Draw : ${draw} ,
+        Number of games: ${numberofgames} `);
+    }
+    if(Computerplay === 2)
+  {
+    ++computerscore;
+    alert(`You played paper,Computer chose Scissors. Computer win.` +
+    ` Player score: ${playerscore} , 
+    Computer Score: ${computerscore} ,
+     Draw : ${draw} ,
+     Number of games: ${numberofgames} `);
+  }
+ ">Paper</button>
+<button 
+onclick="
+ Computerplay = Math.floor(Math.random()*3);
+    ++numberofgames;
+    if(Computerplay === 0)
+    {
+      ++computerscore ;
+      alert(`You played scissors,Computer chose Rock.computer win.`
+       +` Player score: ${playerscore} ,
+        Computer Score: ${computerscore} ,
+         Draw: ${draw} ,
+         Number of games: ${numberofgames} `);
+    }
+    if(Computerplay === 1)
+    {
+      ++playerscore;
+      alert(`You played scissors,Computer chose   Paper.you win.` 
+      +` Player score: ${playerscore} ,
+       Computer Score: ${computerscore} ,
+        Draw : ${draw} ,
+        Number of games: ${numberofgames} `);
+    }
+    if(Computerplay === 2)
+  {
+    ++draw;
+    alert(`You played scissors,Computer chose Scissors. IT'S A DRAW.` +
+    ` Player score: ${playerscore} , 
+    Computer Score: ${computerscore} ,
+     Draw : ${draw} ,
+     Number of games: ${numberofgames} `);
+  }
+">Scissors</button>
+  
+</body>
+<script>
+ 
+ let playerscore=0;
+ let draw=0;
+ let computerscore=0;
+ let numberofgames=0;
+ 
+</script>
+</html>
