@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oBJECTS</title>
+</head>
+<body>
+ 
+</body>
+<script>
+  // Your JavaScript code here
+  const product = {
+    name: "Laptop",
+    price: 999.99,
+    description: "A high-performance laptop for all your computing needs.",
+    specifications: {
+      processor: "Intel Core i7",
+      ram: "16GB",
+      storage: "512GB SSD",
+      display: "15.6-inch Full HD"
+    },
+    availability: true
+  };
+   console.log(product);
+  console.log(product.name);
+  product.price = 213.23;
+  console.log(product.price);
+  delete product.display;
+  console.log(product);
+
+ </script>
+</html>
