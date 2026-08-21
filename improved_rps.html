@@ -13,9 +13,9 @@
    choice = computerchoice();
   alert(`You chose ${playerchoice} and the computer chose ${choice}.
   Result: ${computewinner(playerchoice,choice)},
-   Ties: ${ties},
-    Player Wins: ${playerWins},
-     Computer Wins: ${computerWins}`);
+   Ties: ${scores.ties},
+    Player Wins: ${scores.playerWins},
+     Computer Wins: ${scores.computerWins}`);
   "
   >Rock</button>
   <button
@@ -24,9 +24,9 @@
    choice = computerchoice();
   alert(`You chose ${playerchoice} and the computer chose ${choice}.
   Result: ${computewinner(playerchoice,choice)},
-   Ties: ${ties},
-    Player Wins: ${playerWins},
-     Computer Wins: ${computerWins}`);
+   Ties: ${scores.ties},
+    Player Wins: ${scores.playerWins},
+     Computer Wins: ${scores.computerWins}`);
   ">Paper</button>
   <button
   onclick="
@@ -35,21 +35,26 @@
   choice = computerchoice();
   alert(`You chose ${playerchoice} and the computer chose ${choice}.
   Result: ${computewinner(playerchoice,choice)},
-   Ties: ${ties},
-    Player Wins: ${playerWins},
-     Computer Wins: ${computerWins}`);
+   Ties: ${scores.ties},
+    Player Wins: ${scores.playerWins},
+     Computer Wins: ${scores.computerWins}`);
   ">Scissors</button>
+  <button onclick="scores.numberOfGames = 0; scores.playerWins = 0; scores.computerWins = 0; scores.ties = 0;
+  alert('Scores have been reset.');">
+    Reset score
+  </button>
 
- 
 
   
 </body>
 <script>
-  let numberOfGames= 0;
-  let playerWins= 0;
-  let computerWins= 0;
-  let ties= 0;
-
+  
+const scores={
+ numberOfGames: 0,
+   playerWins: 0,
+   computerWins: 0,
+  ties: 0
+}
 
   let playerchoice;
   let choice;
@@ -62,10 +67,10 @@
   }
 
   function computewinner(playerchoice,choice){
-  numberOfGames++;
+  scores.numberOfGames++;
 
     if(playerchoice===choice){
-      ties++;
+      scores.ties++;
       return "It's a tie!";
 
     } else if(
@@ -73,10 +78,10 @@
       (playerchoice==="Paper" && choice==="Rock") ||
       (playerchoice==="Scissors" && choice ==="Paper")
     ){
-      playerWins++;
+      scores.playerWins++;
       return "You win!";
     } else {
-      computerWins++;
+      scores.computerWins++;
       return "Computer wins!";
     }
    
