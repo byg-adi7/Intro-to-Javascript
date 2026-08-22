@@ -14,8 +14,8 @@
   alert(`You chose ${playerchoice} and the computer chose ${choice}.
   Result: ${computewinner(playerchoice,choice)},
    Ties: ${scores.ties},
-    Player Wins: ${scores.playerWins},
-     Computer Wins: ${scores.computerWins}`);
+   Player Wins: ${scores.playerWins},
+   Computer Wins: ${scores.computerWins}`);
   "
   >Rock</button>
   <button
@@ -25,8 +25,8 @@
   alert(`You chose ${playerchoice} and the computer chose ${choice}.
   Result: ${computewinner(playerchoice,choice)},
    Ties: ${scores.ties},
-    Player Wins: ${scores.playerWins},
-     Computer Wins: ${scores.computerWins}`);
+   Player Wins: ${scores.playerWins},
+   Computer Wins: ${scores.computerWins}`);
   ">Paper</button>
   <button
   onclick="
@@ -36,10 +36,15 @@
   alert(`You chose ${playerchoice} and the computer chose ${choice}.
   Result: ${computewinner(playerchoice,choice)},
    Ties: ${scores.ties},
-    Player Wins: ${scores.playerWins},
-     Computer Wins: ${scores.computerWins}`);
+   Player Wins: ${scores.playerWins},
+   Computer Wins: ${scores.computerWins}`);
   ">Scissors</button>
-  <button onclick="scores.numberOfGames = 0; scores.playerWins = 0; scores.computerWins = 0; scores.ties = 0;
+  <button onclick=
+  "scores.numberOfGames = 0; 
+  scores.playerWins = 0; 
+  scores.computerWins = 0; 
+  scores.ties = 0;
+  localStorage.setItem('scores',JSON.stringify(scores));
   alert('Scores have been reset.');">
     Reset score
   </button>
@@ -49,7 +54,8 @@
 </body>
 <script>
   
-const scores={
+const scores=JSON.parse(localStorage.getItem('scores'))
+||{
  numberOfGames: 0,
    playerWins: 0,
    computerWins: 0,
@@ -66,12 +72,13 @@ const scores={
     
   }
 
+  
   function computewinner(playerchoice,choice){
   scores.numberOfGames++;
 
     if(playerchoice===choice){
       scores.ties++;
-      return "It's a tie!";
+      result =  "It's a tie!";
 
     } else if(
       (playerchoice==="Rock" && choice==="Scissors") ||
@@ -79,12 +86,13 @@ const scores={
       (playerchoice==="Scissors" && choice ==="Paper")
     ){
       scores.playerWins++;
-      return "You win!";
+      result =  "You win!";
     } else {
       scores.computerWins++;
-      return "Computer wins!";
+      result =  "Computer wins!";
     }
-   
+    localStorage.setItem('scores',JSON.stringify(scores));
+   return result;
   }
  
    

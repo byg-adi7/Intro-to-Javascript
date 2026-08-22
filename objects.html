@@ -22,12 +22,15 @@
     },
     availability: true
   };
+ console.log( jsonformat = JSON.stringify(product));
+ console.log(JSON.parse(jsonformat));
    console.log(product);
-  console.log(product.name);
+  console.log(product['name']);
   product.price = 213.23;
   console.log(product.price);
   delete product.display;
   console.log(product);
+  localStorage.setItem('products',JSON.stringify(product));
 
  </script>
 </html>
