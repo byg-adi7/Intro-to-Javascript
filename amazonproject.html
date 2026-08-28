@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon project</title>
+</head>
+<body>
+
+  <script>
+const product = {
+  name: 'basketball',
+  price: 2095
+}
+const service = {
+  name: 'mtn',
+  price: 232767
+}
+console.log(product);
+product.price+=500;
+console.log(product.price)
+product['delivery-date'] = '3 days';
+console.log(product['delivery-date']);
+function comparePrice(product1,product2){
+  return product1.price<product2.price?product1:product2;
+}
+console.log(comparePrice(product,service));
+</script>
+</body>
+
+</html>

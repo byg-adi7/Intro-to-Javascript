@@ -6,10 +6,9 @@
   <title>oBJECTS</title>
 </head>
 <body>
- 
-</body>
-<script>
+ <script>
   // Your JavaScript code here
+  /*
   const product = {
     name: "Laptop",
     price: 999.99,
@@ -31,6 +30,40 @@
   delete product.display;
   console.log(product);
   localStorage.setItem('products',JSON.stringify(product));
+  console.log(localStorage.getItem('products'))*/
+   console.log('hello'.length);
+   console.log('hello'.toUpperCase())
+   const object1 = {
+    name:'Adi',
+    message: 'hello world'
+   };
+ const object4 = {
+    message: 'hello world'
+   };
+   const {message,name} = object1
+   console.log(message);
+   console.log(name)
+   
+
+const object = {
+  message,
+
+  method0 () {
+    console.log('created a method');
+  }
+
+}
+console.log(object)
+
+
+
+   const object2 =object1;
+   object2.message = 'good work';
+   console.log(object1);
+   console.log(object2)
+
 
  </script>
+</body>
+
 </html>
