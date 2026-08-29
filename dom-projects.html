@@ -5,26 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM projects 
   </title>
+  <style>
+    body{
+      font-family: Arial;
+    }
+    .subscribe-button{
+      background-color: black;
+      color: white;
+      border:none;
+      padding-top:  10px;
+      padding-bottom: 10px;
+      padding-right: 15px;
+      padding-left: 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 40px;
+      margin-left: 34px;
+      margin-top: 15px;
+      
+      
+    }
+    .subscribed-button{
+      background-color: antiquewhite;
+      color: black;
+    }
+  </style>
 </head>
 <body>
   <p>YouTube Subscribe Button</p>
-  <button class = "js-subscribe-button"
-  onclick="
-  clickedsub_btn();
-  ">
-    Subscribe
-  </button>
+      <button class = "js-subscribe-button subscribe-button"
+      
+        onclick="
+        clickedsub_btn();
+        ">
+          Subscribe
+      </button>
+        <p> Amazon Shipping Calculator</p>
+        <input 
+        type="number" 
+        placeholder="Cost of order"
+        class="input-space"
+        onkeydown="
+        handleventkeydown(event);
+        ">
+        <button
+            onclick = "
+            calculate();">
+              Calculate
+        </button>
+        <p class="totalcost"></p>
+        
 
-  <p>Rock Paper Scissors</p>
-  <i>Click here</i>
+
+
+
+
+
+
+
   <script>
+    function handleventkeydown(event){
+      if(event.key === 'Enter'){
+        calculate();
+}
+    }
+
     function clickedsub_btn(){
       const subelement = document.querySelector('.js-subscribe-button')
       if(subelement.innerText ==='Subscribe'){
         subelement.innerHTML ='Subscribed'
+        subelement.classList.add('subscribed-button')
       }else{
         subelement.innerHTML = 'Subscribe'
+        subelement.classList.remove('subscribed-button');
       }
+    }
+    function calculate(){
+      const num = document.querySelector('.input-space');
+      let cost = Number(num.value);
+      
+     
+      if(cost <40){
+        cost+=10;
+        cost = Number(cost.toFixed(2))
+      
+        
+      }
+    
+      document.querySelector('.totalcost').innerHTML=`$${cost}`
     }
 
   </script>
