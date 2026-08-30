@@ -30,6 +30,31 @@
       background-color: antiquewhite;
       color: black;
     }
+    .input{
+      font-size: 15px;
+      padding-left: 8px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      border-radius: 7px;
+      border-width: 1px;
+    }
+    .cal-button{
+      font-weight: bold;
+      padding: 9px 15px;
+      background-color: brown;
+      color: beige;
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      
+    }
+    .cost-p{
+      margin-bottom: 20px;
+    }
+    
+    
   </style>
 </head>
 <body>
@@ -45,16 +70,19 @@
         <input 
         type="number" 
         placeholder="Cost of order"
-        class="input-space"
+        class="input-space input"
         onkeydown="
         handleventkeydown(event);
         ">
         <button
+        class="js-cal-button cal-button"
             onclick = "
             calculate();">
               Calculate
         </button>
-        <p class="totalcost"></p>
+        <p class="totalcost cost-p"></p>
+        <p class = "rps-header">Rock Paper Scissors</p>
+        <p class="link">This is the link to the <a href="improved_rps.html">rock paper scissors game</a>. Try it out</p>
         
 
 
@@ -68,7 +96,7 @@
     function handleventkeydown(event){
       if(event.key === 'Enter'){
         calculate();
-}
+       }
     }
 
     function clickedsub_btn(){
@@ -84,18 +112,12 @@
     function calculate(){
       const num = document.querySelector('.input-space');
       let cost = Number(num.value);
-      
-     
       if(cost <40){
         cost+=10;
         cost = Number(cost.toFixed(2))
-      
-        
       }
-    
       document.querySelector('.totalcost').innerHTML=`$${cost}`
     }
-
   </script>
 </body>
 </html>
