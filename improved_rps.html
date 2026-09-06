@@ -15,7 +15,7 @@
         playerchoice='Rock'; 
         choice = computerchoice();
         displaycompchoice(choice);
-      result= computewinner(playerchoice,choice);
+      computewinner(playerchoice,choice);
         "
         >✊
       </button>
@@ -25,7 +25,8 @@
         playerchoice='Paper'; 
         choice = computerchoice();
         displaycompchoice(choice);
-        result= computewinner(playerchoice,choice);
+        
+      computewinner(playerchoice,choice);
         ">🖐️
       </button>
       <button
@@ -35,7 +36,8 @@
         playerchoice='Scissors'; 
         choice = computerchoice();
         displaycompchoice(choice);
-         result= computewinner(playerchoice,choice);
+        
+        computewinner(playerchoice,choice);
        
         ">✌️
       </button>
@@ -45,6 +47,7 @@
       </button>
        <p class="displaywinner winner"></p>
         <p class="displayscores"></p>
+
         <button class="reset-btn" 
         onclick=
           "scores.numberOfGames = 0; 
@@ -59,7 +62,9 @@
  
         ">
             Reset score
-        </button>
+        </button><button class="auto-btn" onclick="
+        autoplaybtn();
+        ">Start autoplay</button>
        
         
 

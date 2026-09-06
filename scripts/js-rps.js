@@ -1,4 +1,4 @@
- let result;
+
  
   
     const scores=JSON.parse(localStorage.getItem('scores'))
@@ -53,6 +53,32 @@
         Ties = ${scores.ties}` ;
 
       }
+       let intervalid;
+        let isPlaying = false;
+        const autoplaybtnElement = document.querySelector('.auto-btn');
+      function autoplaybtn(){
+       
+        if(!isPlaying){
+        intervalid = setInterval(autoplay,1000);
+        isPlaying = true;  
+        autoplaybtnElement.innerText = "Stop autoplay";    
+      }
+      else{
+        clearInterval(intervalid)
+        isPlaying = false
+        autoplaybtnElement.innerText = "Start autoplay";
+      }
+      }
+     
+      function autoplay(){
+        playerchoice = computerchoice();
+       let computerchose = computerchoice();
+       displaycompchoice(computerchose);
+       computewinner(playerchoice,computerchose);
+       highlightPlayerChoice(playerchoice);
+       
+        
+      }
       
       function computewinner(playerchoice,choice){
       scores.numberOfGames++;
@@ -78,3 +104,20 @@
         localStorage.setItem('scores',JSON.stringify(scores));
       return results;
       }
+      function highlightPlayerChoice(choice) {
+    const buttons = document.querySelectorAll('.rock-btn, .paper-btn, .scissors-btn');
+
+    buttons.forEach(button => {
+        button.classList.remove('auto-selected');
+    });
+
+    if (choice === 'Rock') {
+        document.querySelector('.rock-btn').classList.add('auto-selected');
+    }
+    else if (choice === 'Paper') {
+        document.querySelector('.paper-btn').classList.add('auto-selected');
+    }
+    else {
+        document.querySelector('.scissors-btn').classList.add('auto-selected');
+    }
+}
