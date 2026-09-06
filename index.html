@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo app</title>
+  <link rel="stylesheet" href="/todo.css">
+</head>
+<body>
+  <div class="todo-container">
+    <h1>Todo app</h1>
+    <input type="text" id="todo-input"
+    class="js-input-todoname"
+    placeholder="Enter a new todo">
+    
+    <input type="date" id="todo-date"
+    class="js-input-date"
+    placeholder="Enter a date">
+    <button class="todo-btn"
+    onclick="
+    addtodo();
+    ">Add Todo</button>
+    <div class = "render-space"></div>
+
+  </div>
+  <script src="/todo.js"></script>
+</body>
+</html>
