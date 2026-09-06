@@ -1,0 +1,107 @@
+ body{
+            background-color: black;
+      color: white;
+      margin-left: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .header{
+      margin-top: 0px ;
+      margin-left: 0px;
+      margin-right: 0px;
+      border-radius: 10px;
+      padding-left: 250px;
+      background-color: rgb(121, 145, 178);
+      font-weight: 100px;
+      padding-bottom: 1px;
+      padding-top: 10px;
+      font-size: 50px;
+      border-spacing: 1px;
+    }
+    .player-notice{
+      margin-left: 590px;
+      font-size: 30px;
+      margin-bottom: 0px;
+      
+    }
+    .rock-btn{
+      margin: 60px;
+        margin-left: 250px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        border: none;
+        background-color: blue;
+        cursor: pointer;
+
+      padding: 30px;
+      border-radius: 1000px;
+      font-size: 100px;
+
+    }
+    .paper-btn{
+       margin: 60px;
+     margin-top: 10px;
+     margin-bottom: 0px;
+     background-color: red;
+     border: none;
+      padding: 30px;
+      border-radius: 1000px;
+      font-size: 100px;
+      cursor: pointer;
+    }
+    .scissors-btn{
+        margin: 60px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        background-color: gray;
+      padding: 30px;
+      border: none;
+      border-radius: 1000px;
+      font-size: 100px;
+      cursor: pointer;
+    }
+     .comp-notice{
+      margin-top: 10ox;
+      margin-left: 590px;
+      font-size: 30px;
+      margin-bottom: 0px;
+      
+    }
+      .compchoice{
+        margin: 60px;
+        margin-top: 10px;
+         margin-left: 595px;
+         border: none;
+      padding: 30px;
+      border-radius: 1000px;
+      margin-bottom: 0px;
+      font-size: 100px;
+    }
+    .comppaper{
+      background-color: red;
+    }
+    .comprock{
+      background-color: blue;
+    }
+    .compsciss{
+      background-color: gray;
+    }
+    .winner{
+       margin-left: 600px;
+       margin-right: 500px;
+      font-size: 30px;
+      margin-bottom: 0px;
+
+    }
+    .reset-btn{
+        margin-left: 610px;
+       margin-right: 550px;
+       padding: 20px 30px;
+       font-weight: bold;
+       font-size: large;
+       color: white;
+       background-color: red;
+       border: none;
+       cursor: pointer;
+       border-radius: 25px;
+
+    }

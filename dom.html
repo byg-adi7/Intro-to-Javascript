@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoM (Document object module)</title>
+</head>
+<body>
+  <button>
+    hello
+  </button>
+ <button class="js-button">
+  JS-BUTTON
+ </button>
+  <script>
+   document.querySelector('button').innerHTML = 'CHANGED'
+
+   const j_button = document.querySelector('js-button');
+   console.log(j_button);
+
+/*document.title = 'DOM-document object module';
+console.log(document.title);
+console.log(document.body);
+console.log(document.head);
+console.log(document.scripts);
+document.body.innerHTML='CHANGED'
+document.title = 'wowwwww'
+/*document.body.innerHTML = 'HELLO';
+document.title = 'hello world';*/
+</script>
+</body>
+
+</html>
