@@ -74,10 +74,7 @@
         onkeydown="
         handleventkeydown(event);
         ">
-        <button
-        class="js-cal-button cal-button"
-            onclick = "
-            calculate();">
+        <button class="js-cal-button cal-button">
               Calculate
         </button>
         <p class="totalcost cost-p"></p>
@@ -93,6 +90,7 @@
 
 
   <script>
+    document.querySelector('.cal-button').addEventListener('click',()=>{calculate();})
     function handleventkeydown(event){
       if(event.key === 'Enter'){
         calculate();

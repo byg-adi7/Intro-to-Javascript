@@ -9,6 +9,44 @@
       ties: 0
     }
     update();
+
+
+      document.querySelector('.rock-btn').addEventListener('click',()=>{ playerchoice='Rock'; 
+          choice = computerchoice();
+          displaycompchoice(choice);
+        computewinner(playerchoice,choice);});
+
+
+      document.querySelector('.paper-btn').addEventListener('click',()=>{playerchoice='Paper'; 
+        choice = computerchoice();
+        displaycompchoice(choice);
+      computewinner(playerchoice,choice);});
+    
+
+      document.querySelector('.scissors-btn').addEventListener('click',()=>{ playerchoice='Scissors'; 
+        choice = computerchoice();
+        displaycompchoice(choice);
+        computewinner(playerchoice,choice);});
+
+
+
+        document.querySelector('.reset-btn').addEventListener('click',()=>{
+          scores.numberOfGames = 0; 
+          scores.playerWins = 0; 
+          scores.computerWins = 0; 
+          scores.ties = 0;
+            document.querySelector('.displaywinner').innerText = 
+            'Scores have been reset. You can start the game now';
+            update();
+             localStorage.removeItem('scores');
+             localStorage.setItem('scores',JSON.stringify(scores));
+ })
+
+
+
+ document.querySelector('.auto-btn').addEventListener('click',()=>{
+   autoplaybtn();
+ })
     
 
     
@@ -59,7 +97,12 @@
       function autoplaybtn(){
        
         if(!isPlaying){
-        intervalid = setInterval(autoplay,1000);
+        intervalid = setInterval(()=>{
+        playerchoice = computerchoice();
+       let computerchose = computerchoice();
+       displaycompchoice(computerchose);
+       computewinner(playerchoice,computerchose);
+       highlightPlayerChoice(playerchoice);},1000);
         isPlaying = true;  
         autoplaybtnElement.innerText = "Stop autoplay";    
       }
@@ -70,15 +113,7 @@
       }
       }
      
-      function autoplay(){
-        playerchoice = computerchoice();
-       let computerchose = computerchoice();
-       displaycompchoice(computerchose);
-       computewinner(playerchoice,computerchose);
-       highlightPlayerChoice(playerchoice);
-       
-        
-      }
+      
       
       function computewinner(playerchoice,choice){
       scores.numberOfGames++;

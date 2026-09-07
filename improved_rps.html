@@ -9,62 +9,16 @@
 <body>
 <div class="header"><h1 class="header">Rock Paper Scissors</h1></div>
 <p class ="player-notice">Player choose</p>
-      <button
-      class="rock-btn"
-        onclick="
-        playerchoice='Rock'; 
-        choice = computerchoice();
-        displaycompchoice(choice);
-      computewinner(playerchoice,choice);
-        "
-        >✊
-      </button>
-        <button
-        class="paper-btn"
-        onclick="
-        playerchoice='Paper'; 
-        choice = computerchoice();
-        displaycompchoice(choice);
-        
-      computewinner(playerchoice,choice);
-        ">🖐️
-      </button>
-      <button
-      class="scissors-btn"
-        onclick="
-        
-        playerchoice='Scissors'; 
-        choice = computerchoice();
-        displaycompchoice(choice);
-        
-        computewinner(playerchoice,choice);
-       
-        ">✌️
-      </button>
+            <button class="rock-btn">✊</button>
+            <button class="paper-btn">🖐️</button>
+            <button class="scissors-btn">✌️</button>
       <p class="comp-notice">Computer chose</p>
-      <button class="js-compchoice compchoice">
-        🤖
-      </button>
+              <button class="js-compchoice compchoice">🤖</button>
        <p class="displaywinner winner"></p>
         <p class="displayscores"></p>
 
-        <button class="reset-btn" 
-        onclick=
-          "scores.numberOfGames = 0; 
-          scores.playerWins = 0; 
-          scores.computerWins = 0; 
-          scores.ties = 0;
-            document.querySelector('.displaywinner').innerText = 
-            'Scores have been reset. You can start the game now';
-            update();
-             localStorage.removeItem('scores');
-             localStorage.setItem('scores',JSON.stringify(scores));
- 
-        ">
-            Reset score
-        </button><button class="auto-btn" onclick="
-        autoplaybtn();
-        ">Start autoplay</button>
+        <button class="reset-btn">Reset score</button>
+        <button class="auto-btn">Start autoplay</button>
        
         
 

@@ -6,18 +6,16 @@
   <title>Arrays and loops</title>
 </head>
 <body>
-
-
   <p>Todo List</p>
-  <input type="text" placeholder="Todo name" class="todoinput" onkeydown="enter_eventhandler(event)">
-  <input type ="date" class="tododateinput" onkeydown="enter_eventhandler(event)">
-     <button class="js-todo-btn"
-     onclick="
-     addtodo();
-    
-     ">Add</button>
+  <input type="text" placeholder="Todo name" class="todoinput">
+  <input type ="date" class="tododateinput">
+     <button class="js-todo-btn" class="todo-button">Add</button>
      <div class="js-todo-list"></div>
 
- <script src="/scripts/todo.js"></script>
+ <script src="/scripts/todo.js">
+  document.querySelector('.todoinput').addEventListener('keydown',()=>{enter_eventhandler(event)})
+  document.querySelector('.tododateinput').addEventListener('keydown',()=>{enter_eventhandler(event)})
+  document.querySelector('.todo-button').addEventListener('click',()=>{ addtodo();})
+ </script>
 </body>
 </html>
